@@ -1,0 +1,24 @@
+{
+  "name": "bookshelf-api",
+  "version": "1.0.0",
+  "description": "Creating BookShelf API with HAPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albarfikri/BookShelf-API.git"
+  },
+  "keywords": [
+    "HAPI",
+    "Node",
+    "JS"
+  ],
+  "author": "M. Albar Fikri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albarfikri/BookShelf-API/issues"
+  },
+  "homepage": "https://github.com/albarfikri/BookShelf-API#readme"
+}
