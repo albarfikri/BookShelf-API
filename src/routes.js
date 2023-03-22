@@ -2,7 +2,8 @@ import {
   addBookHandler,
   getBooksHandler,
   getBookDetailByIdHandler,
-  updateBookHandler
+  updateBookHandler,
+  deleteBookHandler
 } from './handler.js';
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     method: 'PUT',
     path: '/books/{bookId}',
     handler: updateBookHandler
+  },
+  {
+    method: 'DELETE',
+    path: '/books/{bookId}',
+    handler: deleteBookHandler
   }
 ];
 

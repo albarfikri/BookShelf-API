@@ -133,7 +133,7 @@ const updateBookHandler = (request, h) => {
   const finished = pageCount === readPage;
   const updatedAt = new Date().toISOString();
 
-  const index = notes.findIndex((book) => book.id === id);
+  const index = books.findIndex((book) => book.id === id);
 
   if (index !== -1) {
     if (name === '') {
@@ -189,9 +189,31 @@ const updateBookHandler = (request, h) => {
   }
 };
 
+const deleteBookHandler = (request, h) => {
+  const {bookId} = request.params;
+
+  const index = books.findIndex((book) => book.id === bookId);
+
+  if (index != -1) {
+    books.splice(index, 1);
+    const response = h.response({
+      ...messageResponse('success', 'Buku berhasil dihapus'),
+    });
+    return response;
+  } else {
+    const response = h
+      .response({
+        ...messageResponse('fail', 'Buku gagal dihapus. Id tidak ditemukan'),
+      })
+      .code(404);
+    return response;
+  }
+};
+
 export {
   addBookHandler,
   getBooksHandler,
   getBookDetailByIdHandler,
   updateBookHandler,
+  deleteBookHandler,
 };
